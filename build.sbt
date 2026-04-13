@@ -15,7 +15,6 @@ scalacOptions ++= Seq(
   "-language:experimental.erasedDefinitions",
 )
 
-lazy val `scala-library-template` = (project in file(".")).settings(
-  packagePrefix       := "io.github.sgtswagrid",
-  libraryDependencies += "org.scalameta" %% "munit" % "1.2.4" % Test,
+lazy val `page-loader` = (project in file(".")).settings(
+  packagePrefix := "io.github.sgtswagrid.pageloader",
 )
