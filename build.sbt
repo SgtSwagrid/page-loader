@@ -21,7 +21,7 @@ lazy val `page-loader-common` = crossProject(JSPlatform, JVMPlatform)
   .settings(
     packagePrefix := "io.github.sgtswagrid.pageloader",
     libraryDependencies +=
-      "io.github.sgtswagrid" %%% "asset-loader-common" % "0.1.10",
+      "io.github.sgtswagrid" %%% "asset-loader-common" % "0.1.11",
   )
 
 lazy val `page-loader-client` = project
@@ -39,7 +39,7 @@ lazy val `page-loader-tapir` = project
   .settings(
     packagePrefix := "io.github.sgtswagrid.pageloader.tapir",
     libraryDependencies ++= Seq(
-      "io.github.sgtswagrid"          %% "asset-loader-tapir"       % "0.1.10",
+      "io.github.sgtswagrid"          %% "asset-loader-tapir"       % "0.1.11",
       "com.softwaremill.sttp.tapir"   %% "tapir-core"               % "1.13.15",
       "com.softwaremill.sttp.tapir"   %% "tapir-prometheus-metrics" % "1.13.15",
       "com.softwaremill.sttp.tapir"   %% "tapir-swagger-ui-bundle"  % "1.13.15",
@@ -54,7 +54,7 @@ lazy val `page-loader-tapir-common` = crossProject(JSPlatform, JVMPlatform)
   .settings(
     packagePrefix := "io.github.sgtswagrid.pageloader.tapir",
     libraryDependencies ++= Seq(
-      "io.github.sgtswagrid"        %%% "asset-loader-tapir-common" % "0.1.10",
+      "io.github.sgtswagrid"        %%% "asset-loader-tapir-common" % "0.1.11",
       "com.softwaremill.sttp.tapir" %%% "tapir-core"                % "1.13.15",
     ),
   )

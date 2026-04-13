@@ -19,7 +19,7 @@ import sttp.tapir.*
   */
 class HeartbeatService[F[_]]
   (private val path: EndpointInput[Unit] = "heartbeat")
-  extends HeartbeatEndpoint(path),
+  extends HeartbeatApi(path),
           Service[WebSockets & Fs2Streams[F], F]("Heartbeat Service", "1.0"):
 
   /**

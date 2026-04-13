@@ -13,7 +13,7 @@ import sttp.tapir.*
   * @param path
   *   The URL path at which the endpoint is mounted.
   */
-class HeartbeatEndpoint(private val path: EndpointInput[Unit] = "heartbeat"):
+class HeartbeatApi(private val path: EndpointInput[Unit] = "heartbeat"):
 
   /**
     * The public endpoint definition.
@@ -35,3 +35,5 @@ class HeartbeatEndpoint(private val path: EndpointInput[Unit] = "heartbeat"):
         CodecFormat.TextPlain,
       ](stream),
     )
+
+  val index = endpoint.get.in("").out(htmlBodyUtf8)
