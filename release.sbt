@@ -1,6 +1,4 @@
-ThisBuild / name           := "Page Loader"
-ThisBuild / normalizedName := "page-loader"
-ThisBuild / description    := "A simple loader for ScalaJS webpages with client-side rendering. "
+ThisBuild / description := "A simple loader for ScalaJS webpages with client-side rendering. "
 
 ThisBuild / homepage :=
   Some(url("https://github.com/SgtSwagrid/page-loader"))
