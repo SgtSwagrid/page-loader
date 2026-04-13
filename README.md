@@ -15,7 +15,7 @@
 Add the following dependency to your `build.sbt`:
 
 ```scala
-libraryDependencies += "io.github.sgtswagrid" %% "page-loader" % "0.1.0"
+libraryDependencies += "io.github.sgtswagrid" %% "page-loader" % "0.1.1"
 ```
 
 ## 👁️ See also
