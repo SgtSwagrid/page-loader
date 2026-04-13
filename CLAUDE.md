@@ -12,7 +12,7 @@ Keep it concise and actionable.
 ## Project overview
 
 This is a Scala library intended for use by website developers.
-It loads Scala.js-rendered webpages into memory so that they cam be served by a web server.
+It loads Scala.js-rendered webpages into memory so that they can be served by a web server.
 
 ## Instructions
 
