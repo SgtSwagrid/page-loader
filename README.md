@@ -22,3 +22,4 @@ libraryDependencies += "io.github.sgtswagrid" %% "page-loader" % "0.1.0"
 
 - See [Scala Website Template](https://github.com/SgtSwagrid/scala-website-template) for an example template which uses _Page Loader_ to build a full stack website.
 - See [Asset Loader](https://github.com/SgtSwagrid/page-loader) for a similar library which loads static assets instead of dynamic pages.
+- This library was made using [Scala Library Template](https://github.com/SgtSwagrid/scala-library-template).
