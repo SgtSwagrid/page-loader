@@ -1,7 +1,7 @@
 <div align="center">
 
   <h1>🖥️ Page Loader</h1>
-  <p>A simple loader for [Scala.js](https://www.scala-js.org/) webpages with client-side rendering. </p>
+  <p>A simple loader for <a href="https://www.scala-js.org/">Scala.js</a> webpages with client-side rendering. </p>
   
   <span>
     <a href="https://github.com/SgtSwagrid/page-loader/actions/workflows/build-integrity.yml"><img src="https://github.com/SgtSwagrid/page-loader/actions/workflows/build-integrity.yml/badge.svg" alt="Build status" /></a>
