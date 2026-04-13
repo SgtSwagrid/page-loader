@@ -12,11 +12,7 @@ Keep it concise and actionable.
 ## Project overview
 
 This is a Scala library intended for use by website developers.
-It loads static assets into memory so that they may be served by a web server.
-There is a single main subproject ("page-loader") that loads assets.
-Furthermore, we offer connectors for different web servers, each of which is in a subproject named "page-loader-{web-server}" and directory named "{web-server}".
-The list of subprojects can be found in [build.sbt](build.sbt).
-Currently, the only connector is for [Tapir](https://tapir.softwaremill.com/en/latest/), which you can use as an example.
+It loads Scala.js-rendered webpages into memory so that they cam be served by a web server.
 
 ## Instructions
 
