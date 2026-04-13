@@ -20,13 +20,13 @@ This tool is extremely small and minimalistic, with absolutely no bells or whist
 Add the following dependency to your `build.sbt`:
 
 ```scala
-libraryDependencies += "io.github.sgtswagrid" %% "page-loader-tapir" % "0.1.0"
+libraryDependencies += "io.github.sgtswagrid" %% "page-loader-common" % "0.1.1"
 ```
 
 For the client (Scala.js), add:
 
 ```scala
-libraryDependencies += "io.github.sgtswagrid" %%% "page-loader-client" % "0.1.0"
+libraryDependencies += "io.github.sgtswagrid" %%% "page-loader-client" % "0.1.1"
 ```
 
 Compiled with Scala `3.8.3`, with no intention to explicitly support older versions.
@@ -80,7 +80,7 @@ Contributions are welcome!
 [Tapir](https://tapir.softwaremill.com/en/latest/) is a library to describe HTTP APIs and expose them as a server. A separate connector is provided to easily attach a `ViewData` to a Tapir endpoint. Just add the following dependency:
 
 ```scala
-libraryDependencies += "io.github.sgtswagrid" %% "page-loader-tapir" % "0.1.0"
+libraryDependencies += "io.github.sgtswagrid" %% "page-loader-tapir" % "0.1.1"
 ```
 
 Use the `showView` extension method to convert any Tapir `GET` endpoint into one that serves a page:
@@ -111,7 +111,7 @@ endpoint.get.in("").showView(view, hotReloadWebsocketPath = None)
 [Laminar](https://laminar.dev/) is a reactive UI library for Scala.js. A separate connector provides `LaminarView`, a base trait that handles rendering automatically. Just add the following dependency:
 
 ```scala
-libraryDependencies += "io.github.sgtswagrid" %%% "page-loader-laminar" % "0.1.0"
+libraryDependencies += "io.github.sgtswagrid" %%% "page-loader-laminar" % "0.1.1"
 ```
 
 Extend `LaminarView` instead of `View` and implement `content`:
@@ -139,11 +139,11 @@ For this reason, each aforementioned dependency is published with a common part 
 These can be installed as follows:
 
 ```scala
-libraryDependencies += "io.github.sgtswagrid" %%% "page-loader-common" % "0.1.0"
+libraryDependencies += "io.github.sgtswagrid" %%% "page-loader-common" % "0.1.1"
 ```
 
 ```scala
-libraryDependencies += "io.github.sgtswagrid" %%% "page-loader-tapir-common" % "0.1.0"
+libraryDependencies += "io.github.sgtswagrid" %%% "page-loader-tapir-common" % "0.1.1"
 ```
 
 Note that you don't need to explicitly include the above if you only use this library on the server.
