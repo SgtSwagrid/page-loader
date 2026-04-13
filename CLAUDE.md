@@ -3,27 +3,40 @@
 This file provides guidance to [Claude Code](https://claude.com/product/claude-code) when working with code in this repository.
 It is not intended for human eyes.
 
-**Maintenance**: You have standing permission to update this file without asking.
-                 Add important patterns, gotchas, or context that would help future sessions.
-                 Keep it concise and actionable.
+### Maintenance
 
-## Compilation and Diagnostics
+You (robot or human) have standing permission to update this file without asking.
+Add important patterns, gotchas, or context that would help future sessions.
+Keep it concise and actionable.
+
+## Project overview
+
+This is a Scala library intended for use by website developers.
+It loads static assets into memory so that they may be served by a web server.
+There is a single main subproject ("page-loader") that loads assets.
+Furthermore, we offer connectors for different web servers, each of which is in a subproject named "page-loader-{web-server}" and directory named "{web-server}".
+The list of subprojects can be found in [build.sbt](build.sbt).
+Currently, the only connector is for [Tapir](https://tapir.softwaremill.com/en/latest/), which you can use as an example.
+
+## Instructions
+
+### Compilation and Diagnostics
 
 - When the user asks for help with a compilation or type error, start by running `sbt compile` to see the error for yourself.
   If there are many errors, making it unclear which one the user is referring to, ask them to clarify, and then focus only on that issue.
 - IntelliJ MCP integration is active. When a request seems to implicitly refer to something the user is looking at, always check
   `mcp__ide__getDiagnostics` first to see which file(s) are open and get associated diagnostics (errors, warnings, and info hints with line numbers).
 
-### Testing
+#### Testing
 
 - After making code changes, always run `sbt compile` to verify that issues are fixed and no new ones are introduced.
 - Repeatedly retry upon failure until the build succeeds. If you are unsure how to fix an issue, ask for help or refer to existing code for examples.
 - Before trying to fix an error, make sure you first understand it fully.
 - You should never report that a feature is complete without testing it first.
 
-## Code Style
+### Code Style
 
-### Structure and design
+#### Structure and design
 
 - Write purely-functional, immutable code without side effects.
 - Never use local / multiple returns; instead, use `if` expressions or pattern matching to return values.
@@ -36,7 +49,7 @@ It is not intended for human eyes.
   The user may which to find a different solution that preserves these semantics.
 - Prefer inheritance with `-Ops`-style traits and F-bounded polymorphism, rather than type classes, when possible.
 
-### Syntax
+#### Syntax
 
 - Use new Scala 3 syntax in general, including significant indentation (no braces).
 - Use `[X: {A as a, B, C}]` instead of `[X : B : C](using a: A[X])` for context bounds.
@@ -45,7 +58,7 @@ It is not intended for human eyes.
 - Format with `sbt scalafmtAll` before committing. In general, match your style to that defined in `.scalafmt.conf`.
 - When in doubt, follow the style of existing code in the repository.
 
-### Naming conventions
+#### Naming conventions
 
 - Use Australian English spelling in comments and variable names.
 - Use `camelCase` for variable and method names.
@@ -53,7 +66,7 @@ It is not intended for human eyes.
 - Exceptionally, `lowercase` names are allowed for short-scoped type arguments in type lambdas to avoid shadowing.
 - Use short yet descriptive variable names. For example, `transform: X => Y` in `map` is better than `f: X => Y`, but `x` is better than `x1` and `start` is better than `startIndex`.
 
-### Comments
+#### Comments
 
 - Add Scaladoc comments to all public members (classes, traits, objects, methods, and vals) that are not self-explanatory.
 - All variable/object references in Scaladoc comments should use `[[name]]` links, not backticks.
@@ -64,7 +77,7 @@ It is not intended for human eyes.
 - Return value descriptions (i.e. with `@return`) use indefinite articles (e.g. "a", "an").
 - Start all sentences with a capital letter and end with a period. This includes `@param` tags, etc.
 
-## Pull Requests
+### Pull Requests
 
 When asked to publish the code changes, your task is to open one or more pull requests (PRs) to merge the changes into `main` on GitHub:
 
@@ -77,17 +90,3 @@ When asked to publish the code changes, your task is to open one or more pull re
 - All feature/bugfix/etc branch names should be formatted as "feature_<short description>" or "fix_<short description>" or similar.
 - All PR titles should be formatted as "[<scope>] <Short summary>", e.g. "[renderer] Fixed colour inversion bug."
 - You have GitHub MCP integration that can be used to do the above.
-
-## Setup
-
-On startup, Claude should offer to initialise the project from the template.
-
-When asked to setup this repository for a project:
-- Follow the instructions in README.md.
-- Prompt the user for any information you don't yet have.
-- If you can generate PGP keys and access the GitHub and Sonatype config yourself, then great.
-  If not, then instruct the user step-by-step on the stuff you can't do.
-- Update build.sbt and release.sbt with relevant data for the project.
-- Make sure that LICENSE.md matches the license in build.sbt.
-- Remove the contents of README.md that lie before the delete/keep boundary.
-- When you are done, or if you find this later in an already setup project, remove this section from CLAUDE.md.
