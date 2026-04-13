@@ -1,6 +1,6 @@
 package io.github.sgtswagrid.pageloader.tapir
 
-import io.github.sgtswagrid.assetloader.tapir.Service
+import io.github.sgtswagrid.assetloader.tapir.TapirService
 import sttp.capabilities.WebSockets
 import sttp.capabilities.fs2.Fs2Streams
 import sttp.tapir.*
@@ -20,7 +20,10 @@ import sttp.tapir.*
 class HeartbeatService[F[_]]
   (private val path: EndpointInput[Unit] = "heartbeat")
   extends HeartbeatApi(path),
-          Service[WebSockets & Fs2Streams[F], F]("Heartbeat Service", "1.0"):
+          TapirService[WebSockets & Fs2Streams[F], F](
+            "Heartbeat Service",
+            "1.0",
+          ):
 
   /**
     * A server endpoint that replies `"ok"` to every incoming WebSocket message.
