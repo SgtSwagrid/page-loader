@@ -17,17 +17,7 @@ This tool is extremely small and minimalistic, with absolutely no bells or whist
 
 ## ⬇️ Installation
 
-Add the following dependency to your `build.sbt`:
-
-```scala
-libraryDependencies += "io.github.sgtswagrid" %% "page-loader-common" % "0.1.1"
-```
-
-For the client (Scala.js), add:
-
-```scala
-libraryDependencies += "io.github.sgtswagrid" %%% "page-loader-client" % "0.1.1"
-```
+Choose one **server integration** and one **client integration** from the sections below — that's all you need.
 
 Compiled with Scala `3.8.3`, with no intention to explicitly support older versions.
 
@@ -57,16 +47,17 @@ val endpoints = List(
 Each view is a Scala.js object exported with `@JSExportTopLevel`. The name passed to the annotation must match the `name` field of the corresponding `ViewData` on the server.
 
 ```scala
-import io.github.sgtswagrid.pageloader.View
-import scala.scalajs.js.annotation.{JSExport, JSExportTopLevel}
+import com.raquo.laminar.api.L.{*, given}
+import io.github.sgtswagrid.pageloader.laminar.LaminarView
+import scala.scalajs.js.annotation.JSExportTopLevel
 
 @JSExportTopLevel("IndexView")
-object IndexView extends View:
+object IndexView extends LaminarView:
 
-  @JSExport("show")
-  override def show(rootName: String = "root"): Unit =
-    // Render content into the root element.
-    ???
+  override def content = div(
+    h1("Welcome to my website!"),
+    p("We're still getting set up here... Stay tuned!"),
+  )
 ```
 
 ## 📡 Server Integration
@@ -77,7 +68,7 @@ Contributions are welcome!
 
 ### Tapir
 
-[Tapir](https://tapir.softwaremill.com/en/latest/) is a library to describe HTTP APIs and expose them as a server. A separate connector is provided to easily attach a `ViewData` to a Tapir endpoint. Just add the following dependency:
+[Tapir](https://tapir.softwaremill.com/en/latest/) is a library to describe HTTP APIs and expose them as a server. A separate connector is provided to easily attach a `ViewData` to a Tapir endpoint. Add the following dependency:
 
 ```scala
 libraryDependencies += "io.github.sgtswagrid" %% "page-loader-tapir" % "0.1.1"
@@ -106,15 +97,19 @@ endpoint.get.in("").showView(view, hotReloadWebsocketPath = None)
 
 ## 🎨 Client Integration
 
+Currently, a connector exists for only a single UI framework: Laminar.
+In principle, any future connectors will be published as separate dependencies with the name `page-loader-{ui-framework}`.
+Contributions are welcome!
+
 ### Laminar
 
-[Laminar](https://laminar.dev/) is a reactive UI library for Scala.js. A separate connector provides `LaminarView`, a base trait that handles rendering automatically. Just add the following dependency:
+[Laminar](https://laminar.dev/) is a reactive UI library for Scala.js. A separate connector provides `LaminarView`, a base trait that handles rendering automatically. Add the following dependency:
 
 ```scala
 libraryDependencies += "io.github.sgtswagrid" %%% "page-loader-laminar" % "0.1.1"
 ```
 
-Extend `LaminarView` instead of `View` and implement `content`:
+Extend `LaminarView` and implement `content`:
 
 ```scala
 import com.raquo.laminar.api.L.{*, given}
@@ -129,24 +124,6 @@ object IndexView extends LaminarView:
     p("We're still getting set up here... Stay tuned!"),
   )
 ```
-
-## 🖥️ Client Versions
-
-All server-side dependencies above are exclusively for the JVM.
-However, you may wish to access the non-JVM-specific functionality from the client as well.
-For this reason, each aforementioned dependency is published with a common part that is cross-compiled.
-
-These can be installed as follows:
-
-```scala
-libraryDependencies += "io.github.sgtswagrid" %%% "page-loader-common" % "0.1.1"
-```
-
-```scala
-libraryDependencies += "io.github.sgtswagrid" %%% "page-loader-tapir-common" % "0.1.1"
-```
-
-Note that you don't need to explicitly include the above if you only use this library on the server.
 
 ## 👁️ See also
 
