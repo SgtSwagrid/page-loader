@@ -3,7 +3,7 @@
   <p>A simple <a href="https://www.scala-js.org/">Scala.js</a> webpage loader for <a href="https://www.scala-lang.org/">Scala</a> web servers.</p>
   <span>
     <a href="https://github.com/SgtSwagrid/page-loader/actions/workflows/build-integrity.yml"><img src="https://github.com/SgtSwagrid/page-loader/actions/workflows/build-integrity.yml/badge.svg" alt="Build status" /></a>
-    <a href="https://search.maven.org/artifact/io.github.sgtswagrid/page-loader-tapir_3"><img src="https://img.shields.io/maven-central/v/io.github.sgtswagrid/page-loader-tapir_3.svg" alt="Maven Central" /></a>
+    <a href="https://search.maven.org/artifact/com.alecdorrington/page-loader-tapir_3"><img src="https://img.shields.io/maven-central/v/com.alecdorrington/page-loader-tapir_3.svg" alt="Maven Central" /></a>
   </span>
 </div>
 
@@ -28,8 +28,8 @@ Compiled with Scala `3.8.3`, with no intention to explicitly support older versi
 Define a `ViewData` for each page, then wire it up to a Tapir endpoint using `showView`:
 
 ```scala
-import io.github.sgtswagrid.pageloader.ViewData
-import io.github.sgtswagrid.pageloader.tapir.{HeartbeatService, ViewEndpoint}
+import com.alecdorrington.pageloader.ViewData
+import com.alecdorrington.pageloader.tapir.{HeartbeatService, ViewEndpoint}
 
 val indexView = ViewData(name = "IndexView", pageTitle = "Home")
 val aboutView = ViewData(name = "AboutView", pageTitle = "About")
@@ -48,7 +48,7 @@ Each view is a Scala.js object exported with `@JSExportTopLevel`. The name passe
 
 ```scala
 import com.raquo.laminar.api.L.{*, given}
-import io.github.sgtswagrid.pageloader.laminar.LaminarView
+import com.alecdorrington.pageloader.laminar.LaminarView
 import scala.scalajs.js.annotation.JSExportTopLevel
 
 @JSExportTopLevel("IndexView")
@@ -71,7 +71,7 @@ Contributions are welcome!
 [Tapir](https://tapir.softwaremill.com/en/latest/) is a library to describe HTTP APIs and expose them as a server. A separate connector is provided to easily attach a `ViewData` to a Tapir endpoint. Add the following dependency:
 
 ```scala
-libraryDependencies += "io.github.sgtswagrid" %% "page-loader-tapir" % "0.1.1"
+libraryDependencies += "com.alecdorrington" %% "page-loader-tapir" % "0.1.1"
 ```
 
 Use the `showView` extension method to convert any Tapir `GET` endpoint into one that serves a page:
@@ -106,14 +106,14 @@ Contributions are welcome!
 [Laminar](https://laminar.dev/) is a reactive UI library for Scala.js. A separate connector provides `LaminarView`, a base trait that handles rendering automatically. Add the following dependency:
 
 ```scala
-libraryDependencies += "io.github.sgtswagrid" %%% "page-loader-laminar" % "0.1.1"
+libraryDependencies += "com.alecdorrington" %%% "page-loader-laminar" % "0.1.1"
 ```
 
 Extend `LaminarView` and implement `content`:
 
 ```scala
 import com.raquo.laminar.api.L.{*, given}
-import io.github.sgtswagrid.pageloader.laminar.LaminarView
+import com.alecdorrington.pageloader.laminar.LaminarView
 import scala.scalajs.js.annotation.JSExportTopLevel
 
 @JSExportTopLevel("IndexView")

@@ -1,4 +1,4 @@
-package io.github.sgtswagrid.pageloader.tapir
+package com.alecdorrington.pageloader.tapir
 
 import io.github.sgtswagrid.assetloader.tapir.TapirService
 import sttp.capabilities.WebSockets

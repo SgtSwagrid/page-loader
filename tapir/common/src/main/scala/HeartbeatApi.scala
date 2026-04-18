@@ -1,4 +1,4 @@
-package io.github.sgtswagrid.pageloader.tapir
+package com.alecdorrington.pageloader.tapir
 
 import sttp.capabilities.Streams
 import sttp.tapir.*

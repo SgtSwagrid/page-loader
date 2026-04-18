@@ -1,4 +1,4 @@
-package io.github.sgtswagrid.pageloader
+package com.alecdorrington.pageloader
 
 /**
   * A simple HTML template common to every page of an application.

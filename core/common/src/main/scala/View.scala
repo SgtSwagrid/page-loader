@@ -1,4 +1,4 @@
-package io.github.sgtswagrid.pageloader
+package com.alecdorrington.pageloader
 
 /**
   * The base trait for all views. Each view corresponds to a distinct page (i.e.

@@ -1,4 +1,4 @@
-package io.github.sgtswagrid.pageloader
+package com.alecdorrington.pageloader
 
 /**
   * Metadata for a [[View]].

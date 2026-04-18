@@ -1,6 +1,6 @@
-package io.github.sgtswagrid.pageloader.tapir
+package com.alecdorrington.pageloader.tapir
 
-import io.github.sgtswagrid.pageloader.{PageTemplate, ViewData}
+import com.alecdorrington.pageloader.{PageTemplate, ViewData}
 import sttp.tapir.*
 import sttp.tapir.server.ServerEndpoint
 

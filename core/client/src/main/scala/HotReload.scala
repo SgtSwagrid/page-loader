@@ -1,4 +1,4 @@
-package io.github.sgtswagrid.pageloader
+package com.alecdorrington.pageloader
 
 import org.scalajs.dom
 import org.scalajs.dom.WebSocket

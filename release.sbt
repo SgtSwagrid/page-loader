@@ -3,7 +3,7 @@ ThisBuild / description := "A simple loader for ScalaJS webpages with client-sid
 ThisBuild / homepage :=
   Some(url("https://github.com/SgtSwagrid/page-loader"))
 
-ThisBuild / organization         := "io.github.sgtswagrid"
+ThisBuild / organization         := "com.alecdorrington"
 ThisBuild / organizationName     := "SgtSwagrid"
 ThisBuild / organizationHomepage := Some(url("https://github.com/SgtSwagrid"))
 

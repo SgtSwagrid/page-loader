@@ -1,8 +1,8 @@
-package io.github.sgtswagrid.pageloader.laminar
+package com.alecdorrington.pageloader.laminar
 
 import com.raquo.laminar.api.L.render
 import com.raquo.laminar.nodes.ReactiveElement
-import io.github.sgtswagrid.pageloader.View
+import com.alecdorrington.pageloader.View
 import org.scalajs.dom.document
 import scala.scalajs.js.annotation.JSExport
 
