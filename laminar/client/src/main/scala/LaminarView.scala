@@ -1,8 +1,8 @@
 package com.alecdorrington.pageloader.laminar
 
+import com.alecdorrington.pageloader.View
 import com.raquo.laminar.api.L.render
 import com.raquo.laminar.nodes.ReactiveElement
-import com.alecdorrington.pageloader.View
 import org.scalajs.dom.document
 import scala.scalajs.js.annotation.JSExport
 
