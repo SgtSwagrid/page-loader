@@ -1,11 +1,11 @@
-ThisBuild / name           := "Page Loader"
-ThisBuild / normalizedName := "page-loader"
-ThisBuild / description    := "A simple loader for ScalaJS webpages with client-side rendering. "
+ThisBuild / description := "A simple loader for ScalaJS webpages with client-side rendering. "
 
-ThisBuild / homepage :=
-  Some(url("https://github.com/SgtSwagrid/page-loader"))
+ThisBuild / description :=
+  "A simple loader for ScalaJS webpages with client-side rendering. "
 
-ThisBuild / organization         := "io.github.sgtswagrid"
+ThisBuild / homepage := Some(url("https://github.com/SgtSwagrid/page-loader"))
+
+ThisBuild / organization         := "com.alecdorrington"
 ThisBuild / organizationName     := "SgtSwagrid"
 ThisBuild / organizationHomepage := Some(url("https://github.com/SgtSwagrid"))
 
@@ -16,7 +16,7 @@ ThisBuild / licenses :=
 
 ThisBuild / scmInfo := Some(ScmInfo(
   url("https://github.com/SgtSwagrid/page-loader"),
-  "scm:git@github.com:SgtSwagrid/page-loader.git",
+  "scm:git@github.com/SgtSwagrid/page-loader.git",
 ))
 
 ThisBuild / developers := List(Developer(
