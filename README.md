@@ -72,7 +72,7 @@ Contributions are welcome!
 [Tapir](https://tapir.softwaremill.com/en/latest/) is a library to describe HTTP APIs and expose them as a server. A separate connector is provided to easily attach a `ViewData` to a Tapir endpoint. Add the following dependency:
 
 ```scala
-libraryDependencies += "com.alecdorrington" %% "page-loader-tapir" % "0.1.1"
+libraryDependencies += "com.alecdorrington" %% "page-loader-tapir" % "0.2.2"
 ```
 
 Use the `showView` extension method to convert any Tapir `GET` endpoint into one that serves a page:
@@ -107,7 +107,7 @@ Contributions are welcome!
 [Laminar](https://laminar.dev/) is a reactive UI library for Scala.js. A separate connector provides `LaminarView`, a base trait that handles rendering automatically. Add the following dependency:
 
 ```scala
-libraryDependencies += "com.alecdorrington" %%% "page-loader-laminar" % "0.1.1"
+libraryDependencies += "com.alecdorrington" %%% "page-loader-laminar" % "0.2.2"
 ```
 
 Extend `LaminarView` and implement `content`:
