@@ -1,5 +1,3 @@
-ThisBuild / description := "A simple loader for ScalaJS webpages with client-side rendering. "
-
 ThisBuild / description :=
   "A simple loader for ScalaJS webpages with client-side rendering. "
 
@@ -14,11 +12,6 @@ ThisBuild / versionScheme := Some("strict")
 ThisBuild / licenses :=
   List("MIT" -> url("https://opensource.org/licenses/MIT"))
 
-ThisBuild / scmInfo := Some(ScmInfo(
-  url("https://github.com/SgtSwagrid/page-loader"),
-  "scm:git@github.com/SgtSwagrid/page-loader.git",
-))
-
 ThisBuild / developers := List(Developer(
   id = "SgtSwagrid",
   name = "Alec Dorrington",
@@ -29,5 +22,3 @@ ThisBuild / developers := List(Developer(
 // Target the Sonatype Central Portal (https://central.sonatype.com).
 // Requires SONATYPE_USERNAME and SONATYPE_PASSWORD as GitHub secrets or environment variables.
 ThisBuild / sonatypeCredentialHost := "central.sonatype.com"
-ThisBuild / publishMavenStyle      := true
-Global / excludeLintKeys ++= Set(publishMavenStyle)
