@@ -1,6 +1,6 @@
 package com.alecdorrington.pageloader.tapir
 
-import io.github.sgtswagrid.assetloader.tapir.TapirService
+import com.alecdorrington.assetloader.tapir.TapirService
 import sttp.capabilities.WebSockets
 import sttp.capabilities.fs2.Fs2Streams
 import sttp.tapir.*
