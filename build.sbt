@@ -57,10 +57,10 @@ lazy val `page-loader-tapir` = project
   .settings(
     packagePrefix := "com.alecdorrington.pageloader.tapir",
     libraryDependencies ++= Seq(
-      "io.github.sgtswagrid"          %% "asset-loader-tapir"       % "0.1.11",
-      "com.softwaremill.sttp.tapir"   %% "tapir-core"               % "1.13.15",
-      "com.softwaremill.sttp.tapir"   %% "tapir-prometheus-metrics" % "1.13.15",
-      "com.softwaremill.sttp.tapir"   %% "tapir-swagger-ui-bundle"  % "1.13.15",
+      "io.github.sgtswagrid"          %% "asset-loader-tapir"       % "0.1.12",
+      "com.softwaremill.sttp.tapir"   %% "tapir-core"               % "1.13.16",
+      "com.softwaremill.sttp.tapir"   %% "tapir-prometheus-metrics" % "1.13.16",
+      "com.softwaremill.sttp.tapir"   %% "tapir-swagger-ui-bundle"  % "1.13.16",
       "com.softwaremill.sttp.client4" %% "fs2"                      % "4.0.22",
     ),
   )
