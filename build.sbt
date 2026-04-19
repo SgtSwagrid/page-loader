@@ -1,6 +1,8 @@
 import IdeSettings.packagePrefix
 import sbt._
 import sbt.Keys._
+import sbtunidoc.BaseUnidocPlugin.autoImport.*
+import sbtunidoc.ScalaUnidocPlugin
 
 ThisBuild / scalaVersion := "3.8.3"
 
@@ -14,6 +16,22 @@ scalacOptions ++= Seq(
   "-language:experimental.strictEqualityPatternMatching",
   "-language:experimental.erasedDefinitions",
 )
+
+lazy val `page-loader` = project
+  .in(file("."))
+  .enablePlugins(ScalaUnidocPlugin)
+  .aggregate(
+    `page-loader-common`.jvm,
+    `page-loader-common`.js,
+    `page-loader-client`,
+    `page-loader-tapir`,
+    `page-loader-tapir-common`.jvm,
+    `page-loader-tapir-common`.js,
+    `page-loader-laminar`,
+  )
+  .settings(
+    ScalaUnidoc / unidoc / scalacOptions ++= Seq("-project", "Page Loader"),
+  )
 
 lazy val `page-loader-common` = crossProject(JSPlatform, JVMPlatform)
   .crossType(CrossType.Pure)
