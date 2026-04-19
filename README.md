@@ -8,6 +8,12 @@
   </span>
 </div>
 
+<br/><br/>
+
+> "There is nothing new under the sun." — Ecclesiastes.
+
+<br/>
+
 ## ✔️ Features
 
 This tool is extremely small and minimalistic, with absolutely no bells or whistles.
