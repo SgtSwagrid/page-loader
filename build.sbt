@@ -83,5 +83,5 @@ lazy val `page-loader-laminar` = project
   .dependsOn(`page-loader-client`)
   .settings(
     packagePrefix := "com.alecdorrington.pageloader.laminar",
-    libraryDependencies += "com.raquo" %%% "laminar" % "17.0.0",
+    libraryDependencies += "com.raquo" %%% "laminar" % "17.2.1",
   )
