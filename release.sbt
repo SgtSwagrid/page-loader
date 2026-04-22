@@ -1,7 +1,7 @@
 ThisBuild / description :=
   "A simple loader for ScalaJS webpages with client-side rendering. "
 
-ThisBuild / homepage := Some(url("https://github.com/SgtSwagrid/page-loader"))
+ThisBuild / homepage := Some(url("https:/alecdorrington.com/page-loader"))
 
 ThisBuild / organization         := "com.alecdorrington"
 ThisBuild / organizationName     := "SgtSwagrid"
