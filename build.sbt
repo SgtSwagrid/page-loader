@@ -61,7 +61,7 @@ lazy val `page-loader-tapir` = project
       "com.softwaremill.sttp.tapir"   %% "tapir-core"               % "1.13.16",
       "com.softwaremill.sttp.tapir"   %% "tapir-prometheus-metrics" % "1.13.16",
       "com.softwaremill.sttp.tapir"   %% "tapir-swagger-ui-bundle"  % "1.13.16",
-      "com.softwaremill.sttp.client4" %% "fs2"                      % "4.0.22",
+      "com.softwaremill.sttp.client4" %% "fs2"                      % "4.0.23",
     ),
   )
 
