@@ -39,7 +39,7 @@ lazy val `page-loader-common` = crossProject(JSPlatform, JVMPlatform)
   .settings(
     packagePrefix := "com.alecdorrington.pageloader",
     libraryDependencies +=
-      "com.alecdorrington" %%% "asset-loader-common" % "0.2.5",
+      "com.alecdorrington" %%% "asset-loader-common" % "0.2.7",
   )
 
 lazy val `page-loader-client` = project
@@ -57,7 +57,7 @@ lazy val `page-loader-tapir` = project
   .settings(
     packagePrefix := "com.alecdorrington.pageloader.tapir",
     libraryDependencies ++= Seq(
-      "com.alecdorrington"            %% "asset-loader-tapir"       % "0.2.5",
+      "com.alecdorrington"            %% "asset-loader-tapir"       % "0.2.7",
       "com.softwaremill.sttp.tapir"   %% "tapir-core"               % "1.13.16",
       "com.softwaremill.sttp.tapir"   %% "tapir-prometheus-metrics" % "1.13.16",
       "com.softwaremill.sttp.tapir"   %% "tapir-swagger-ui-bundle"  % "1.13.16",
@@ -72,7 +72,7 @@ lazy val `page-loader-tapir-common` = crossProject(JSPlatform, JVMPlatform)
   .settings(
     packagePrefix := "com.alecdorrington.pageloader.tapir",
     libraryDependencies ++= Seq(
-      "com.alecdorrington"          %%% "asset-loader-tapir-common" % "0.2.5",
+      "com.alecdorrington"          %%% "asset-loader-tapir-common" % "0.2.7",
       "com.softwaremill.sttp.tapir" %%% "tapir-core"                % "1.13.15",
     ),
   )
