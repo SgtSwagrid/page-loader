@@ -26,7 +26,7 @@ This tool is extremely small and minimalistic, with absolutely no bells or whist
 
 Choose one **server integration** and one **client integration** from the sections below — that's all you need.
 
-Compiled with Scala `3.8.3`, with no intention to explicitly support older versions.
+Compiled with Scala `3.9.0`, with no intention to explicitly support older versions.
 
 ## ⚙️ Example
 
