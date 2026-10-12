@@ -71,7 +71,7 @@ lazy val `page-loader-tapir` = project
     libraryDependencies ++= Seq(
       "com.alecdorrington"            %% "asset-loader-tapir"       % "0.2.5",
       "com.softwaremill.sttp.tapir"   %% "tapir-core"               % "1.13.33",
-      "com.softwaremill.sttp.tapir"   %% "tapir-prometheus-metrics" % "1.13.32",
+      "com.softwaremill.sttp.tapir"   %% "tapir-prometheus-metrics" % "1.13.33",
       "com.softwaremill.sttp.tapir"   %% "tapir-swagger-ui-bundle"  % "1.13.32",
       "com.softwaremill.sttp.client4" %% "fs2"                      % "4.0.27",
     ),
