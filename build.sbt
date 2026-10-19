@@ -25,8 +25,7 @@ lazy val `page-loader` = project
   .enablePlugins(ScalaUnidocPlugin)
   .aggregate(
     (`page-loader-common`.projectRefs ++
-      `page-loader-tapir-common`.projectRefs ++
-      Seq[ProjectReference](
+      `page-loader-tapir-common`.projectRefs ++ Seq[ProjectReference](
         `page-loader-client`,
         `page-loader-tapir`,
         `page-loader-laminar`,
@@ -45,7 +44,8 @@ lazy val `page-loader-common` = projectMatrix
 
     // sbt 2.0.x resolves a matrix's sources against the working directory,
     // so they are pinned to this build's own base:
-    sourceDirectory := (ThisBuild / baseDirectory).value / "core" / "common" / "src",
+    sourceDirectory :=
+      (ThisBuild / baseDirectory).value / "core" / "common" / "src",
     libraryDependencies +=
       "com.alecdorrington" %% "asset-loader-common" % "0.2.5",
   )
@@ -57,8 +57,8 @@ lazy val `page-loader-client` = project
   .enablePlugins(ScalaJSPlugin)
   .dependsOn(`page-loader-common`.js(scala3))
   .settings(
-    name                                   := "page-loader-client",
-    packagePrefix                          := "com.alecdorrington.pageloader",
+    name                                  := "page-loader-client",
+    packagePrefix                         := "com.alecdorrington.pageloader",
     libraryDependencies += "org.scala-js" %% "scalajs-dom" % "2.8.1",
   )
 
@@ -73,7 +73,7 @@ lazy val `page-loader-tapir` = project
       "com.softwaremill.sttp.tapir"   %% "tapir-core"               % "1.13.32",
       "com.softwaremill.sttp.tapir"   %% "tapir-prometheus-metrics" % "1.13.32",
       "com.softwaremill.sttp.tapir"   %% "tapir-swagger-ui-bundle"  % "1.13.32",
-      "com.softwaremill.sttp.client4" %% "fs2"                      % "4.0.27",
+      "com.softwaremill.sttp.client4" %% "fs2"                      % "4.1.0",
     ),
   )
 
@@ -87,7 +87,8 @@ lazy val `page-loader-tapir-common` = projectMatrix
 
     // sbt 2.0.x resolves a matrix's sources against the working directory,
     // so they are pinned to this build's own base:
-    sourceDirectory := (ThisBuild / baseDirectory).value / "tapir" / "common" / "src",
+    sourceDirectory :=
+      (ThisBuild / baseDirectory).value / "tapir" / "common" / "src",
     libraryDependencies ++= Seq(
       "com.alecdorrington"          %% "asset-loader-tapir-common" % "0.2.5",
       "com.softwaremill.sttp.tapir" %% "tapir-core"                % "1.13.15",
