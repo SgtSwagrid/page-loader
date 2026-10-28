@@ -8,6 +8,9 @@
   </span>
 </div>
 
+> [!WARNING]
+> Page Loader is still a prototype. Anything could be broken or change between minor versions.
+
 <br/><br/>
 
 > "There is nothing new under the sun." — Ecclesiastes.
@@ -24,9 +27,17 @@ This tool is extremely small and minimalistic, with absolutely no bells or whist
 
 ## ⬇️ Installation
 
-Choose one **server integration** and one **client integration** from the sections below — that's all you need.
+There are several components which can be installed separately, but the same version number (e.g. [latest](../../releases/latest)) must be used across all of them.
+The following applies for [Scala 3](https://www.scala-lang.org/) projects built with [sbt 2](https://www.scala-sbt.org/).
+Add one **server integration** and one **client integration** to your `build.sbt` file:
 
-Compiled with Scala `3.9.0`, with no intention to explicitly support older versions.
+```scala
+// Tapir server integration
+libraryDependencies += "com.alecdorrington" %% "page-loader-tapir" % "{version}"
+
+// Laminar client integration
+libraryDependencies += "com.alecdorrington" %% "page-loader-laminar" % "{version}"
+```
 
 ## ⚙️ Example
 
@@ -75,11 +86,7 @@ Contributions are welcome!
 
 ### Tapir
 
-[Tapir](https://tapir.softwaremill.com/en/latest/) is a library to describe HTTP APIs and expose them as a server. A separate connector is provided to easily attach a `ViewData` to a Tapir endpoint. Add the following dependency:
-
-```scala
-libraryDependencies += "com.alecdorrington" %% "page-loader-tapir" % "0.2.4"
-```
+[Tapir](https://tapir.softwaremill.com/en/latest/) is a library to describe HTTP APIs and expose them as a server. A separate connector, `page-loader-tapir`, is provided to easily attach a `ViewData` to a Tapir endpoint.
 
 Use the `showView` extension method to convert any Tapir `GET` endpoint into one that serves a page:
 
@@ -110,11 +117,7 @@ Contributions are welcome!
 
 ### Laminar
 
-[Laminar](https://laminar.dev/) is a reactive UI library for Scala.js. A separate connector provides `LaminarView`, a base trait that handles rendering automatically. Add the following dependency:
-
-```scala
-libraryDependencies += "com.alecdorrington" %%% "page-loader-laminar" % "0.2.4"
-```
+[Laminar](https://laminar.dev/) is a reactive UI library for Scala.js. A separate connector, `page-loader-laminar`, provides `LaminarView`, a base trait that handles rendering automatically.
 
 Extend `LaminarView` and implement `content`:
 
