@@ -91,7 +91,7 @@ lazy val `page-loader-tapir-common` = projectMatrix
       (ThisBuild / baseDirectory).value / "tapir" / "common" / "src",
     libraryDependencies ++= Seq(
       "com.alecdorrington"          %% "asset-loader-tapir-common" % "0.2.5",
-      "com.softwaremill.sttp.tapir" %% "tapir-core"                % "1.13.15",
+      "com.softwaremill.sttp.tapir" %% "tapir-core"                % "1.13.33",
     ),
   )
   .jvmPlatform(scalaVersions = Seq(scala3))
